@@ -1,2 +1,2 @@
 # CIAT_Projects
- Class Projects
+ This is a compliation of class projects.
