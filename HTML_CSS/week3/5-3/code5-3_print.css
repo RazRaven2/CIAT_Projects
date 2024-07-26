@@ -1,0 +1,28 @@
+﻿@charset "utf-8";
+
+/*
+   New Perspectives on HTML5 and CSS3, 8th Edition
+   Tutorial 5
+   Coding Challenge 3
+
+   Author: Razielle De La Cerda
+   Date: 27 March 2024   
+   Filename: code5-3_print.css
+
+*/
+
+@page {margin: 1in;
+size:8.5in 11in;}
+
+a {text-decoration: none;}
+
+nav{page-break-inside: avoid;}
+
+nav>ol>li{line-height: .3in;}
+
+a::after{
+   display: inline-block;
+   margin-left: 20px;
+   word-wrap: break-word;
+   content:'['attr(href)']';
+}

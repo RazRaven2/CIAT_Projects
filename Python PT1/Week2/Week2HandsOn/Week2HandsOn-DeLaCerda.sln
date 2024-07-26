@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Week2HandsOn-DeLaCerda", "Week2HandsOn-DeLaCerda.pyproj", "{A2E50541-F1C4-404C-8B94-A10A3BF1EBD8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2E50541-F1C4-404C-8B94-A10A3BF1EBD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2E50541-F1C4-404C-8B94-A10A3BF1EBD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3FF80635-8085-4A2B-9D49-D50FA56E7E07}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,42 @@
+﻿@charset "utf-8";
+
+/*
+   New Perspectives on HTML5 and CSS3, 8th Edition
+   Tutorial 6
+   Coding Challenge 1
+   
+   Author: Razielle De La Cerda
+   Date: 02 April 2024  
+   Filename: code6-1_table.css
+
+*/
+
+table{
+   border-collapse: collapse;
+   border: 20px groove gray;}
+
+th, td{
+   border: 1px solid gray;
+   padding: 5px;
+   text-align: left;
+   vertical-align: top;
+}
+
+caption{
+   caption-side: top;
+   text-align: left;
+   font-size: 1.5em;
+}
+
+table col#firstcol{
+   background-color: yellow;
+   width: 150px;
+}
+
+table col#hourcols {
+   width: 75px;
+}
+
+thead {
+   background-color: aqua;
+}

@@ -1,0 +1,4 @@
+aList = [1, 2, 3]
+aList.remove(2)
+
+print(aList)

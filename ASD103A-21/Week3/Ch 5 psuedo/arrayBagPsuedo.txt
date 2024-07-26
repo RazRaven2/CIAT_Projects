@@ -1,0 +1,8 @@
+check lengths of self and self.time:
+     set temp to new Array twice the length of self
+     loop for i in range(length of self)
+          temp[i] = self.items[i]
+     set self.items = temp
+
+     set self.items = temp
+     increment self.size by 1

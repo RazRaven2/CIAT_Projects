@@ -1,0 +1,1 @@
+        self.numScores[index] = score

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- 
+Author: Razielle DeLaCerda
+Date: 19 April 2024
+
+-->
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Wanderng Paw Studios</title>
+    <link rel="stylesheet" media="screen and (max-device-width: 999px)" href="css/fthand.css" />
+    <link rel="stylesheet" media="screen and (min-device-width: 1000px)" href="css/fantrick.css" />
+    <link href="http://fonts.googleapis.com/css?family=Mr+Bedfort" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+    crossorigin="anonymous"></script>
+    <script src="js/services.js" defer></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnUYETQosthfqby0lA3TDAPdGBJULEBaI&callback=initMap"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/elevation/js?key=AIzaSyCnUYETQosthfqby0lA3TDAPdGBJULEBaI&callback=initMap"></script>
+    
+</head>
+<body>
+    <div id="container">
+       <header>
+          <h1>
+            <!--Need logo updated-->
+            <img src="images/wplogo.jpg" alt="Wandering Paw Studios" title="" width = "128" height = "128"/>
+          </h1>
+       </header>
+ 
+       <nav>
+        <ul>
+           <li><a href="about.html">About</a></li>
+           <li><a href="portfolio.html">Portfolio</a></li>
+           <li id="currentPage"><a href="services.html">Services</a></li>
+           <li><a href="projects.html">Projects</a></li>
+        </ul>
+     </nav>
+         
+       <article>
+          <h2>Services</h2>
+          <p>Our experienced, professional feline gardeners are up to the task for your gardening needs.</p>
+          <p>Choose the custom options that fit your needs:</p>
+          <form id="estimateform">
+             <fieldset>
+                <legend><span>Gardening</span></legend>
+                <input type="number" min="0" max="4" id="gardenNum" />
+                <label for="gardenNum">
+                   <p># of gardeners (1&#8209;4)</p>
+                   <p>$100/hr</p>
+                </label>
+ 
+                <input type="number" min="2" id="gardenHrs" />
+                <label for="gardenHrs">
+                   <p># of hours to photograph (minimum&nbsp;2)</p>
+                </label>
+ 
+                <input type="checkbox" id="tasteTesting" />
+                <label for="tasteTesting">
+                   <p>Taste Tester</p>
+                   <p>$350</p>
+                </label>
+ 
+                <input type="checkbox" id="photoRights" />
+                <label for="grantRights">
+                   <p>Photography rights for all photos</p>
+                   <p>$1250</p>
+                </label>
+             </fieldset>
+             <fieldset>
+                <legend><span>Travel</span></legend>
+                <input type="number" id="gardenDist" min="0" />
+                <label for="gardenDist">
+                   <p>Event distance from Olympia, WA</p>
+                   <p>$2/mi per feline gardener</p>
+                </label>
+             </fieldset>
+             <fieldset>
+               <legend><span>Request Location</span></legend>
+               <div id="displayMap"></div>
+               <div id="coordsBox">
+                  <textarea id="latitude"></textarea>
+                  <textarea id="longitude"></textarea>
+                  <textarea id="altitude"></textarea>
+               </div>
+             </fieldset>
+          </form>
+       </article>
+       <aside>
+          <p>Total Estimate: <span id="estimate"></span></p>
+       </aside>
+       <footer>
+        <p>Wandering Paw Studios &bull; Olympia, Washington</p>
+       </footer>
+    </div>
+ </body>
+ 
+
+</html>

@@ -1,0 +1,35 @@
+/*  JavaScript 7th Edition
+    Chapter 3
+    Hands-on Project 3-2
+
+    Filename: styles.css
+*/
+
+ 
+ /* figure styles */
+ 
+ div#gallery {
+    display: flex;
+    flex-flow: row wrap;
+ }
+ 
+ div#gallery figure {
+    flex: 1 1 150px;
+    margin: 5px;
+    border: 1px solid black;
+    background-color:hsl(129,23%,58%);
+ }
+ 
+ div#gallery figure img {
+    display: block;
+    width: 100%;
+ }
+ 
+ div#gallery figure figcaption {
+    display: block;
+    text-align: center;
+    font-size: 0.85em;
+    padding: 3px;
+    font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+ }
+ 

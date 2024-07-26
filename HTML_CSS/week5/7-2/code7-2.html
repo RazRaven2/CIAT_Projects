@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <!--
+   New Perspectives on HTML5 and CSS3, 8th Edition
+   Tutorial 7
+   Coding Challenge 2
+   
+   Author:  Razielle DeLaCerda
+   Date:    9 April 2024
+   Filename: code7-2.html
+   -->
+   <meta charset="utf-8">
+   <link href="code7-2_forms.css" rel="stylesheet" media="all"/>
+   <title>Coding Challenge 7-2</title>
+</head>
+<body>
+   <h1>Survey Questions</h1>
+
+      <ol type="1">
+         <li>
+            How satisfied were you with the conference workshops?
+            <ol type="a">
+               <fieldset>
+               <li>
+                  <input name="response" id="vsat" value="1" type="radio" />
+                  <label>Very Satisfied</label>                  
+               </li>
+               <li>
+                  <input name="response" id="vsat" value="1" type="radio" />
+                  <label>Satisfied</label>
+               </li>
+               <li>
+                  <input name="response" id="vsat" value="1" type="radio" />
+                  <label>Dissatisfied</label>
+               </li>
+               <li>
+                  <input name="response" id="vsat" value="1" type="radio" />
+                  <label>Very Dissatisfied</label>
+               </li>
+            </fieldset>                 
+            </ol>
+         </li>
+         <li>
+            How satisfied were you with the conference speakers?
+            <ol type="a">
+               <fieldset class="optGroup">
+               <li>
+                  <input name="response" id="vsat" value="1" type="radio" />
+                  <label>Very Satisfied</label>                  
+               </li>
+               <li>
+                  <input name="response" id="vsat" value="1" type="radio" />
+                  <label>Satisfied</label>
+               </li>
+               <li>
+                  <input name="response" id="vsat" value="1" type="radio" />
+                  <label>Dissatisfied</label>
+               </li>
+               <li>
+                  <input name="response" id="vsat" value="1" type="radio" />
+                  <label>Very Dissatisfied</label>
+               </li>
+            </fieldset>                        
+            </ol>
+         </li>
+         <li>
+            How satisfied were you with the conference facilities?
+            <ol type="a">
+               <fieldset class="optGroup">
+               <li>
+                  <input name="response" id="vsat" value="1" type="radio" />
+                  <label>Very Satisfied</label>                  
+               </li>
+               <li>
+                  <input name="response" id="vsat" value="1" type="radio" />
+                  <label>Satisfied</label>
+               </li>
+               <li>
+                  <input name="response" id="vsat" value="1" type="radio" />
+                  <label>Dissatisfied</label>
+               </li>
+               <li>
+                  <input name="response" id="vsat" value="1" type="radio" />
+                  <label>Very Dissatisfied</label>
+               </li>
+            </fieldset>                    
+            </ol>
+         </li>
+         <li>
+            How likely are you to attend next year's conference?
+            <div id="newRow">
+               very unlikley
+               <input name="serviceRate" id="rangebox" type="range" value="2" step="1" min="0" max="4" />
+               very likely
+            </div>
+         </li> 
+         <li>
+           <label for="commBox">Provide any suggestions for the next conference: </label>
+           <textarea name="custExp" id="commBox"></textarea>
+         </li>         
+      </ol>
+
+
+</body>
+</html>

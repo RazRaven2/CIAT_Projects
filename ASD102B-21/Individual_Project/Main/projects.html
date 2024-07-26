@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 
+Author: Razielle DeLaCerda
+Date: 19 April 2024
+
+-->
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Wanderng Paw Studios</title>
+    <link rel="stylesheet" media="screen and (max-device-width: 999px)" href="css/fthand.css" />
+    <link rel="stylesheet" media="screen and (min-device-width: 1000px)" href="css/fantrick.css" />
+    <link href="http://fonts.googleapis.com/css?family=Mr+Bedfort" rel="stylesheet" type="text/css" />
+    <script src="js/projects.js" defer></script>
+    
+</head>
+<body>
+    <div id="container">
+       <header>
+          <h1>
+            <!--Need logo updated-->
+            <img src="images/wplogo.jpg" alt="Wandering Paw Studios" title="" width = "128" height = "128"/>
+          </h1>
+       </header>
+ 
+       <nav>
+        <ul>
+           <li><a href="about.html">About</a></li>
+           <li><a href="portfolio.html">Portfolio</a></li>
+           <li><a href="services.html">Services</a></li>
+           <li  id="currentPage"><a href="projects.html">Projects</a></li>
+        </ul>
+     </nav>
+         
+       <article>
+          <h2>Contact Us</h2>
+          <label for="userEmail">
+            Email
+            <input type="email" id="userEmail" name="email" />
+          </label>
+          <label for = "responseRequest">
+            Is a response requested
+            <input type = "checkbox">
+          </label>
+          
+          <textarea id="comment" rows="" cols=""></textarea>
+          <div id="countLabel">
+          Character Count: <span id="countValue">0</span> / <span id="limit">1000</span>
+          </div>      
+          <div id="warningBox"></div>
+          <fieldset id="submitbutton">
+          <input type="button" value="Submit" onclick="validateEmail();"/>
+          </fieldset>
+          <div id="submitMsg"></div>
+          
+       </article>
+       <aside>
+         
+       </aside>
+       <footer>
+        <p>Wandering Paw Studios &bull; Olympia, Washington</p>
+       </footer>
+    </div>
+ </body>
+ 
+
+</html>
