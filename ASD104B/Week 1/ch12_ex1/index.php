@@ -2,7 +2,7 @@
 require_once('cart.php');
 
 // Start session management with a persistent cookie
-$lifetime = 60 * 60 * 24 * 14;    // 2 weeks in seconds
+$lifetime = 60 * 60 * 24 * 365 * 3;    // 3 years in seconds 60 * 60 * 24 * 365 * 3
 session_set_cookie_params($lifetime, '/');
 session_start();
 
@@ -52,6 +52,10 @@ switch($action) {
     case 'empty_cart':
         unset($_SESSION['cart12']);
         include('cart_view.php');
+        break;
+    case 'end_session':
+        session_destroy();
+        include('add_item_view.php');
         break;
 }
 ?>

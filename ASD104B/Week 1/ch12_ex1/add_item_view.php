@@ -40,6 +40,7 @@
             <input type="submit" value="Add Item"/>
         </form>
         <p><a href=".?action=show_cart">View Cart</a></p>
+        <p><?php echo session_id() ?></p>
 
     </main>
 </body>
