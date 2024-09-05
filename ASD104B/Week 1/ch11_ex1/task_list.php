@@ -10,7 +10,7 @@
     </header>
 
     <main>
-        
+        <p><?php print_r($task_list); ?></p>
         <!-- part 1: the errors -->
         <?php if (is_array($errors) && count($errors) > 0) : ?>
         <h2>Errors:</h2>
@@ -90,8 +90,8 @@
                 <?php endforeach; ?>
             <?php endif; ?>
             <label>Task:</label>
-            <input type="hidden" name="modifiedtaskid" value="<?php echo $task_index; ?>">
-            <input type="text" name="modifiedtask" value="<?php echo $task_to_modify; ?>"><br>
+            <input type="hidden" name="modifiedtaskid" value="<?php echo $task_to_modify; ?>">
+            <input type="text" name="modifiedtask" value="<?php echo $task_list[$task_to_modify]; ?>"><br>
             <label>&nbsp;</label>
             <input type="submit" name="action" value="Save Changes">
             <input type="submit" name="action" value="Cancel Changes">

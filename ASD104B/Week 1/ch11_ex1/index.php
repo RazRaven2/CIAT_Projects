@@ -24,7 +24,7 @@ switch( $action ) {
         if (empty($new_task)) {
             $errors[] = 'The new task cannot be empty.';
         } else {
-            $task_list[] = $new_task;
+            array_push($task_list, $new_task);
         }
         break;
     case 'Delete Task':
@@ -36,18 +36,39 @@ switch( $action ) {
             $task_list = array_values($task_list);
         }
         break;
-/*
     case 'Modify Task':
-    
+        $task_to_modify = filter_input(INPUT_POST, 'taskid', FILTER_VALIDATE_INT);
+        break;
+
     case 'Save Changes':
+        $modifiedtaskid = intval(filter_input(INPUT_POST, 'modifiedtaskid', FILTER_VALIDATE_INT));
+        $modifiedtask = filter_input(INPUT_POST, 'modifiedtask');
+        $replacement = array($modifiedtaskid => $modifiedtask);
+        $task_list = array_replace($task_list, $replacement);
+
+        break;
     
     case 'Cancel Changes':
+
+        break;
     
     case 'Promote Task':
+        $promotetaskid = filter_input(INPUT_POST, 'taskid', FILTER_VALIDATE_INT);
+        $new_id = $promotetaskid - 1;
+        if($new_id < 0){
+            $errors[] = "You can not promote past the first task.";
+        } else {
+            $temp_list = array_splice($task_list, $promotetaskid, 1);
+            $temp2_list = array_splice($task_list, 0, $new_id);
+            $task_list = array_merge($temp2_list, $temp_list, $task_list);
+        }
+        break;
         
     case 'Sort Tasks':
+        sort($task_list);
+        break;
     
-*/
+
 }
 
 include('task_list.php');
