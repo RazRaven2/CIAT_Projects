@@ -1,12 +1,16 @@
 <?php 
 
-
-
 // Get the action to perform
 $action = filter_input(INPUT_POST, 'action');
 if ($action === NULL) {
     $action = filter_input(INPUT_GET, 'action');
 }
+$view_control = 0;
+$name = '';
+$value = '';
+$expire = 1;
+$path = '';
+
 
 // Add or update cart as needed
 switch($action) {
@@ -14,18 +18,25 @@ switch($action) {
         // Start cookie session 
         $name = filter_input(INPUT_POST, 'name');
         $value = filter_input(INPUT_POST, 'value');
-        $expire = 60*60;
+        $expire = intval(filter_input(INPUT_POST, 'value'));
         $path= '/';
+        $view_control = 0;
 
         setcookie($name, $value, $expire, $path);
+
         break;
 
     case 'View':
-        $userid = filter_input(INPUT_COOKIE, 'userid', FILTER_VALIDATE_INT);
+        $name = filter_input(INPUT_POST, 'name');
+        $view_control = 1;
+
         break;
     case 'Delete':
-        $expire = 0;
-        setcookie('userid', '', $expire, '');
+        $name = filter_input(INPUT_POST, 'name');
+        $expire = -1;
+        $view_control = 0;
+        setcookie($name, '', $expire, '');
+
         break;
     }
 ?>
@@ -53,10 +64,10 @@ switch($action) {
         <label>&nbsp;</label>
         <input type="submit" name='action' value='Delete'/><br>
 
-        <?php if (empty($userid)) : ?>
-                <p>----</p>
+        <?php if ($view_control == 0) : ?>
+            <p>----</p>
         <?php else: ?>
-                <p><?php echo $userid; ?></p>
+            <p><?php echo $_COOKIE["$name"]; ?></p>
         <?php endif; ?>
 
     </form>
