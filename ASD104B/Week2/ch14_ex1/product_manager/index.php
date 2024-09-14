@@ -59,7 +59,13 @@ switch($action) {
             include('../errors/error.php');
         } else {
             $current_category = CategoryDB::getCategory($category_id);
-            $product = new Product($current_category, $code, $name, $price);
+            $product = new Product();
+            $product->setCategory($current_category);
+            $product->setCode($code);
+            $product->setName($name);
+            $product->setPrice($price);
+
+
             ProductDB::addProduct($product);
 
             // Display the Product List page for the current category

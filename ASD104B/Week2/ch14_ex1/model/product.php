@@ -3,10 +3,10 @@ class Product {
     private int $id;
 
     public function __construct(
-        private Category $category,
-        private string $code,
-        private string $name,
-        private float $price,
+        private ?Category $category = NULL,
+        private string $code = '',
+        private string $name = '',
+        private float $price = 0.00,
     ) { }
 
     public function getCategory() {
