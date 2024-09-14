@@ -46,7 +46,7 @@
                 <?php endforeach; ?>
                     <tr id="cart_footer">
                         <td colspan="3"><b>Subtotal</b></td>
-                        <td>$<?php echo get_subtotal(); ?></td>
+                        <td>$<?php echo get_subtotal($cart, 3); ?></td>
                     </tr>
                     <tr>
                         <td colspan="4" class="right">
