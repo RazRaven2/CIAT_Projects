@@ -32,10 +32,10 @@ switch ($action) {
         $verify = '';
         $firstName = '';
         $lastName = '';
-        $address = '';
-        $city = '';
-        $state = '';
-        $zip = '';
+        $address = 'optional';
+        $city = 'optional';
+        $state = 'optional';
+        $zip = 'optional';
         $phone = '';
         $cardType = '';
         $cardNumber = '';

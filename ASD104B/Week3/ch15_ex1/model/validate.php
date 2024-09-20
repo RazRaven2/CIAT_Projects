@@ -56,7 +56,7 @@ class Validate {
         // if OK after text field check, move on to phone check
         if (!$field->hasError() && !$field->isEmpty()) {
             // Call the pattern method to validate a phone number
-            $pattern = '/^[[:digit:]]{3}-[[:digit:]]{3}-[[:digit:]]{4}$/';
+            $pattern = '/^\d{3}-\d{3}-\d{4}$/';
             $message = 'Invalid phone number.';
             $this->pattern($name, $value, $pattern, $message);
         }
@@ -78,14 +78,14 @@ class Validate {
 
     public function password($name, $password) {
         // Get Field object and do text field check
-        $field = $this->text($name, $password, 6);  // minimum 6 characters
+        $field = $this->text($name, $password, 8);  // minimum 8 characters
 
         // if OK after text field check, move on to password check
         if (!$field->hasError() && !$field->isEmpty()) {
 
             // Patterns to validate password
-            $pattern = "/^(?=.*[[:digit:]])(?=.*[[:upper:]])(?=.*[[:lower:]])";
-            $pattern .= "(?=.*[_-])[[:digit:][:upper:][:lower:]_-]{6,}$/";
+            $pattern = "/^(?=.*[[:digit:]])(?=.*[[:upper:]])(?=.*[[:lower:]])(?=.*\D)";
+            $pattern .= "[[:digit:][:upper:][:lower:]\d]{8,}$/";
             $message = 'Must have one each of upper, lower, digit, and "-_".';
             $this->pattern($name, $password, $pattern, $message);
         }
@@ -105,7 +105,7 @@ class Validate {
         }
     }
 
-    public function state($name, $value) {
+    public function state($name, $value = 'optional') {
         // Get Field object and do text field check
         $field = $this->text($name, $value);
 
@@ -117,7 +117,7 @@ class Validate {
                 'LA', 'ME', 'MA', 'MD', 'MI', 'MN', 'MS', 'MO', 'MT',
                 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH',
                 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT',
-                'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
+                'VT', 'VA', 'WA', 'WV', 'WI', 'WY', 'optional'
             ];
             $stateString = implode('|', $states);
             $pattern = '/^(' . $stateString . ')$/';
@@ -125,13 +125,13 @@ class Validate {
         }
     }
 
-    public function zip($name, $value) {
+    public function zip($name, $value='11111') {
         // Get Field object and do text field check
         $field = $this->text($name, $value);
 
         // if OK after text field check, move on to zip check
         if (!$field->hasError() && !$field->isEmpty()) {
-            $pattern = '/^[[:digit:]]{5}(-[[:digit:]]{4})?$/';
+            $pattern = '/^\d{5}(-\d{4})?$/';
             $message = 'Invalid zip code.';
             $this->pattern($name, $value, $pattern, $message);
         }
