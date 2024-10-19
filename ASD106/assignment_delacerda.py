@@ -8,10 +8,10 @@ import time
         # Set the name and num attributes
         # Set the finished attribute to False
 class MyThread(threading.Thread):
-    def __init__(self, name, num):
+    def __init__(self, name, number):
         threading.Thread.__init__(self)
         self.name = name
-        self.num = num
+        self.num = int(number)
         self.finished = False
 
     # Main thread method
@@ -21,7 +21,7 @@ class MyThread(threading.Thread):
            # Set the finished attribute to True
 
     def run(self):
-        for i in range(self.num, 0):
+        for i in reversed(range(0, self.num)):
             print(f"{self.name}: Count {i}")
             time.sleep(1)
             if (i==0):
@@ -31,7 +31,7 @@ class MyThread(threading.Thread):
     # Additional method to check if thread has finished
     def is_finished(self):
         if (self.finished):
-            print("Program complete.")
+            print(self.name + " complete.")
    
 
 # Create five instances of the MyThread class
