@@ -2,11 +2,20 @@ function AnalyzeFileContent {
      param (
           [string]$path
      )
-     $lines = (Get-Content $path).lines
-     $words = (Get-Content $path).words
-     $characters = (Get-Content $path).characters
+     try {
+          $content = Get-Content -Path $path -ErrorAction Stop
+          $lines = $content | Measure-Object -Line | select-object -ExpandProperty Lines 
+          $words = $content| Measure-Object -Word | select-object -ExpandProperty Words 
+          $characters = $content| Measure-Object -Character | select-object -ExpandProperty Characters 
+     
+          return $lines, $words, $characters     
+     }
+     catch {
+          Write-Host "File not found!" 
+     }
 
-     return $lines, $words, $characters
+
+     
 }
 
 function GenerateReport {
